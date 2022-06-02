@@ -27,6 +27,8 @@ function addEntry(event) {
   $photoURL.setAttribute('src', 'images/placeholder-image-square.jpg');
   $title.value = '';
   $notes.value = '';
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('allEntries', dataJSON);
 }
 
 $submit.addEventListener('click', addEntry);

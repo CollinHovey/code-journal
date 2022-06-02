@@ -18,6 +18,13 @@
   width: 100%;
 }
 
+img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 210px;
+  border-radius: 4px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
@@ -40,15 +47,11 @@
   }
 
   form {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
     margin-left: 20%;
     margin-right: 20%;
   }
 
   h2 {
-    flex-basis: 50%;
     margin-left: 20%;
   }
 }
@@ -56,13 +59,6 @@
 .submit-row {
   justify-content: right;
   display: flex;
-}
-
-img {
-  object-fit: cover;
-  width: 100%;
-  max-height: 210px;
-  border-radius: 4px;
 }
 
 input {
