@@ -70,3 +70,20 @@ button.submit:hover {
 textarea#notes {
   font-family: sans-serif;
 }
+
+button.entries-new {
+  background-color: #562b81;
+  color: white;
+  border-radius: 3px;
+  max-width: 60px;
+  font-size: 12px;
+  border: none;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+h1.entries-header {
+  margin: 0;
+}

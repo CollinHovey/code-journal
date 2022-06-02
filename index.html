@@ -20,8 +20,14 @@
   </header>
   <main>
     <div class="column-full">
-      <div data-view="entry-form" class="entry-form">
-        <div class="header"><h2>Code Journal</h2></div>
+      <div class="header">
+        <ul class="header-nav">
+          <li class="header-main"><h2>Code Journal</h2></li>
+          <li><button class="entries-button">Entries</button></li>
+        </ul>
+
+      </div>
+      <div data-view="entry-form" class="entry-form hidden">
         <form>
           <div class="row">
             <h1>New Entry</h1>
@@ -43,6 +49,31 @@
             <button class="submit">SAVE</button>
           </div>
         </form>
+      </div>
+      <div data-view="entries" class="entries-container column-half-entries">
+        <div class="row-entries">
+          <h1 class="entries-header">Entries</h1>
+          <button class="entries-new">NEW</button>
+        </div>
+        <div class="row">
+          <ul class="entries-list">
+            <li class="column-half"><img src="images/placeholder-image-square.jpg" alt="placehoder"></li>
+            <li class="entries-list column-half">
+              <h1 class="entry-name">Ada Lovelace</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+          </ul>
+          <ul class="entries-list">
+            <li class="column-half"><img src="images/placeholder-image-square.jpg" alt="placehoder"></li>
+            <li class="entries-list column-half">
+              <h1 class="entry-name">Ada Lovelace</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </main>
