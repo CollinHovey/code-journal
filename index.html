@@ -19,6 +19,32 @@
   <header>
   </header>
   <main>
+    <div class="column-full">
+      <div data-view="entry-form" class="entry-form">
+        <div class="header"><h2>Code Journal</h2></div>
+        <form>
+          <div class="row">
+            <h1>New Entry</h1>
+          </div>
+          <div class="row row-image">
+            <div class="image column-half"><img src="images/placeholder-image-square.jpg" alt="placeholder"></div>
+            <div class="column-half">
+              <label for="title">Title</label>
+              <input id="title" name="title" required>
+              <label for="photo-url">Photo URL</label>
+              <input id="photo-url" name="photo-url" required>
+            </div>
+          </div>
+          <div class="row">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" required></textarea>
+          </div>
+          <div class="submit-row">
+            <button class="submit">SAVE</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
