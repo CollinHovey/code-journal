@@ -39,11 +39,6 @@
     margin: 0 auto;
   }
 
-  .submit-row {
-    justify-content: right;
-    display: flex;
-  }
-
   form {
     justify-content: center;
     display: flex;
@@ -56,6 +51,11 @@
     flex-basis: 50%;
     margin-left: 20%;
   }
+}
+
+.submit-row {
+  justify-content: right;
+  display: flex;
 }
 
 img {

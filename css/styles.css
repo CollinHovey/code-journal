@@ -36,12 +36,17 @@ textarea {
   resize: none;
 }
 
-input.submit {
+button.submit {
   background-color: #562b81;
   color: white;
   border-radius: 3px;
   max-width: 60px;
   font-size: 12px;
+  border: none;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-right: 2%;
+  padding-left: 2%;
 }
 
 input:focus {
@@ -56,4 +61,12 @@ textarea:focus {
 
 div.header {
   background-color: #562b81;
+}
+
+button.submit:hover {
+  cursor: pointer;
+}
+
+textarea#notes {
+  font-family: sans-serif;
 }
