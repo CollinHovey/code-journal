@@ -3,6 +3,7 @@ var $newPhotoURL = document.querySelector('input#photo-url');
 var $title = document.querySelector('input#title');
 var $notes = document.querySelector('textarea#notes');
 var $submit = document.querySelector('button.submit');
+var $form = document.querySelector('form');
 
 function updatePhoto(event) {
   if (event.target.value === '') {
@@ -21,14 +22,9 @@ function addEntry(event) {
   newEntry.title = $title.value;
   newEntry.photoURL = $newPhotoURL.value;
   newEntry.notes = $notes.value;
-  data.entries.push(newEntry);
+  data.entries.unshift(newEntry);
   data.nextEntryId += 1;
-  $newPhotoURL.value = '';
-  $photoURL.setAttribute('src', 'images/placeholder-image-square.jpg');
-  $title.value = '';
-  $notes.value = '';
-  var dataJSON = JSON.stringify(data);
-  localStorage.setItem('allEntries', dataJSON);
+  $form.reset();
 }
 
 $submit.addEventListener('click', addEntry);
