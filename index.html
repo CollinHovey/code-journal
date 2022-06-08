@@ -33,7 +33,7 @@
             <h1>New Entry</h1>
           </div>
           <div class="row row-image">
-            <div class="image column-half"><img src="images/placeholder-image-square.jpg" alt="placeholder"></div>
+            <div class="image column-half"><img class="form-image" src="images/placeholder-image-square.jpg" alt="placeholder"></div>
             <div class="column-half">
               <label for="title">Title</label>
               <input id="title" name="title" required>
@@ -46,7 +46,7 @@
             <textarea id="notes" name="notes" required></textarea>
           </div>
           <div class="submit-row">
-            <button class="submit">SAVE</button>
+            <button type="submit" class="submit">SAVE</button>
           </div>
         </form>
       </div>
@@ -55,22 +55,18 @@
           <h1 class="entries-header">Entries</h1>
           <button class="entries-new">NEW</button>
         </div>
-        <div class="row">
+        <div class="no-entries">
+          <p class="no-entries">No entries have been recorded.</p>
+        </div>
+        <div class="row-entries-list">
           <ul class="entries-list">
+            <li>
+
+            </li>
             <li class="column-half"><img src="images/placeholder-image-square.jpg" alt="placehoder"></li>
             <li class="entries-list column-half">
               <h1 class="entry-name">Ada Lovelace</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </li>
-          </ul>
-          <ul class="entries-list">
-            <li class="column-half"><img src="images/placeholder-image-square.jpg" alt="placehoder"></li>
-            <li class="entries-list column-half">
-              <h1 class="entry-name">Ada Lovelace</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </li>
           </ul>
         </div>
