@@ -7,8 +7,7 @@ var data = {
 };
 
 window.addEventListener('beforeunload', saveData);
-
-window.addEventListener('load', pullData);
+pullData();
 
 function saveData(event) {
   var dataJSON = JSON.stringify(data);

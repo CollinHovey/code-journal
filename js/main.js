@@ -41,13 +41,13 @@ function addEntry(event) {
   newEntry.notes = $notes.value;
   data.entries.unshift(newEntry);
   data.nextEntryId += 1;
+  $entryList.prepend(newEntryDom(newEntry));
   $form.reset();
   switchEntries();
-  // if (data.entries.length !== 0) {
-  //   $noEntries.remove();
-  //   newEntryDom(data.entries[0]);
-  // }
-  // $photoURL.setAttribute('src', 'images/placeholder-image-square.jpg');
+  if (data.entries.length !== 0) {
+    $noEntries.remove();
+  }
+  $photoURL.setAttribute('src', 'images/placeholder-image-square.jpg');
 }
 
 $form.addEventListener('submit', addEntry);
@@ -57,7 +57,6 @@ function newEntryDom(entry) {
   $newList.setAttribute('class', 'column-full-entry');
   var $listInfo = document.createElement('div');
   $listInfo.setAttribute('class', 'entries-list column-half');
-  // $entryList.prepend($listInfo);
   var $newEntryName = document.createElement('h1');
   $newEntryName.setAttribute('class', 'entry-name');
   $newEntryName.textContent = entry.title;
@@ -67,7 +66,6 @@ function newEntryDom(entry) {
   $listInfo.appendChild($newEntrySumary);
   var $imageList = document.createElement('div');
   $imageList.setAttribute('class', 'column-half');
-  // $entryList.prepend($imageList);
   var $entryImage = document.createElement('img');
   $imageList.appendChild($entryImage);
   $entryImage.setAttribute('src', entry.photoURL);
@@ -87,5 +85,3 @@ function loadingAllEntries(entry) {
 }
 
 window.addEventListener('DOMContentLoaded', loadingAllEntries);
-
-window.addEventListener('load', loadingAllEntries);
