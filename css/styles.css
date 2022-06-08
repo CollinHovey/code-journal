@@ -70,3 +70,11 @@ button.submit:hover {
 textarea#notes {
   font-family: sans-serif;
 }
+
+h1.entries-header {
+  margin: 0;
+}
+
+p.no-entries {
+  text-align: center;
+}

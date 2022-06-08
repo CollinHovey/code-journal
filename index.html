@@ -20,14 +20,20 @@
   </header>
   <main>
     <div class="column-full">
-      <div data-view="entry-form" class="entry-form">
-        <div class="header"><h2>Code Journal</h2></div>
+      <div class="header">
+        <ul class="header-nav">
+          <li class="header-main"><h2>Code Journal</h2></li>
+          <li><button class="entries-button">Entries</button></li>
+        </ul>
+
+      </div>
+      <div data-view="entry-form" class="entry-form hidden">
         <form>
           <div class="row">
             <h1>New Entry</h1>
           </div>
           <div class="row row-image">
-            <div class="image column-half"><img src="images/placeholder-image-square.jpg" alt="placeholder"></div>
+            <div class="image column-half"><img class="form-image" src="images/placeholder-image-square.jpg" alt="placeholder"></div>
             <div class="column-half">
               <label for="title">Title</label>
               <input id="title" name="title" required>
@@ -40,9 +46,22 @@
             <textarea id="notes" name="notes" required></textarea>
           </div>
           <div class="submit-row">
-            <button class="submit">SAVE</button>
+            <button type="submit" class="submit">SAVE</button>
           </div>
         </form>
+      </div>
+      <div data-view="entries" class="entries-container column-half-entries">
+        <div class="row-entries">
+          <h1 class="entries-header">Entries</h1>
+          <button class="entries-new">NEW</button>
+        </div>
+        <div class="no-entries">
+          <p class="no-entries">No entries have been recorded.</p>
+        </div>
+        <div class="row-entries-list">
+          <ul class="entries-list">
+          </ul>
+        </div>
       </div>
     </div>
   </main>

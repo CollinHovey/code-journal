@@ -1,5 +1,4 @@
 /* exported data */
-
 var data = {
   view: 'entry-form',
   entries: [],
@@ -8,8 +7,17 @@ var data = {
 };
 
 window.addEventListener('beforeunload', saveData);
+pullData();
 
 function saveData(event) {
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('allEntries', dataJSON);
+}
+
+function pullData(event) {
+  var savedDataJSON = localStorage.getItem('allEntries');
+  var savedData = JSON.parse(savedDataJSON);
+  if (savedData !== null) {
+    data = savedData;
+  }
 }

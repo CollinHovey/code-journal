@@ -16,6 +16,12 @@
 .column-full,
 .column-half {
   width: 100%;
+  margin-bottom: 5%;
+}
+
+.column-full-entry {
+  width: 100%;
+  margin-bottom: 5%;
 }
 
 img {
@@ -23,6 +29,51 @@ img {
   width: 100%;
   max-height: 210px;
   border-radius: 4px;
+}
+
+li {
+  list-style: none;
+}
+
+.row-entries {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.entries-container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+ul.header-nav {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-left: 5%;
+  margin-top: 0;
+}
+
+button.entries-new {
+  background-color: #562b81;
+  color: white;
+  border-radius: 3px;
+  max-width: 60px;
+  font-size: 12px;
+  border: none;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+button.entries-new:hover {
+  cursor: pointer;
+}
+
+ul.entries-list {
+  padding-left: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -51,8 +102,47 @@ img {
     margin-right: 20%;
   }
 
-  h2 {
-    margin-left: 20%;
+  .row-entries {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .entries-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  ul.header-nav {
+    margin-left: 25%;
+  }
+
+  ul.entries-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  li.column-full-entry {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h1.entry-name {
+    margin-top: 0;
+  }
+
+  button.entries-new {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .column-full-entry {
+    display: flex;
   }
 }
 
@@ -71,15 +161,33 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
-h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 5%;
-}
-
 form {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+button.entries-button {
+  color: white;
+  background-color: #562b81;
+  border: none;
+  font-size: 12px;
+}
+
+.entries-button:hover {
+  cursor: pointer;
+}
+
+.header-main {
+  margin-right: 2%;
+}
+
+p {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+h1.entry-name {
+  font-size: 20px;
+  margin-right: none;
+  margin-top: 10%;
 }
