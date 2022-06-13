@@ -28,12 +28,12 @@
 
       </div>
       <div data-view="entry-form" class="entry-form hidden">
-        <form>
+        <form class="add-form">
           <div class="row">
             <h1>New Entry</h1>
           </div>
           <div class="row row-image">
-            <div class="image column-half"><img class="form-image" src="images/placeholder-image-square.jpg" alt="placeholder"></div>
+            <div class="image column-half"><img onerror="$photoURLEdit.setAttribute('src', 'images/placeholder-image-square.jpg');" class="form-image" src="images/placeholder-image-square.jpg" alt="placeholder"></div>
             <div class="column-half">
               <label for="title">Title</label>
               <input id="title" name="title" required>
@@ -44,6 +44,30 @@
           <div class="row">
             <label for="notes">Notes</label>
             <textarea id="notes" name="notes" required></textarea>
+          </div>
+          <div class="submit-row">
+            <button type="submit" class="submit">SAVE</button>
+          </div>
+        </form>
+      </div>
+      <div data-view="edit-form" class="edit-form hidden">
+        <form class="edit-form">
+          <div class="row">
+            <h1>Edit Entry</h1>
+          </div>
+          <div class="row row-image">
+            <div class="image column-half"><img onerror="$photoURLEdit.setAttribute('src', 'images/placeholder-image-square.jpg');" class="form-image-edit" src="images/placeholder-image-square.jpg"
+                alt="placeholder"></div>
+            <div class="column-half">
+              <label for="title-edit">Title</label>
+              <input id="title-edit" name="title-edit" required>
+              <label for="photo-url-edit">Photo URL</label>
+              <input id="photo-url-edit" name="photo-url-edit" required>
+            </div>
+          </div>
+          <div class="row">
+            <label for="notes-edit">Notes</label>
+            <textarea id="notes-edit" name="notes-edit" required></textarea>
           </div>
           <div class="submit-row">
             <button type="submit" class="submit">SAVE</button>
