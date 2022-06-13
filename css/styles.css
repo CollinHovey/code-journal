@@ -78,3 +78,16 @@ h1.entries-header {
 p.no-entries {
   text-align: center;
 }
+
+i {
+  color: #562b81;
+}
+
+.entry-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+i:hover {
+  cursor: pointer;
+}
