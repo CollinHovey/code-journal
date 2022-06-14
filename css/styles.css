@@ -91,3 +91,58 @@ i {
 i:hover {
   cursor: pointer;
 }
+
+div.delete-popup {
+  position: fixed;
+  background-color: white;
+  border-radius: 10px;
+  top: 40%;
+  left: 40%;
+  padding: 20px;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-delete-button {
+  background-color: hsl(0deg 0% 71%);
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.confirm-delete-button {
+  background-color: hsl(0deg 72% 51%);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.delete-question {
+  padding-bottom: 20px;
+}
+
+.cancel-delete-button:hover {
+  cursor: pointer;
+}
+
+.confirm-delete-button:hover {
+  cursor: pointer;
+}
+
+.delete-button {
+  cursor: pointer;
+}
+
+.popup-shadow {
+  background-color: black;
+  position: fixed;
+  opacity: 0.6;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

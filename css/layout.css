@@ -147,7 +147,7 @@ ul.entries-list {
 }
 
 .submit-row {
-  justify-content: right;
+  justify-content: space-between;
   display: flex;
 }
 
@@ -190,4 +190,9 @@ h1.entry-name {
   font-size: 20px;
   margin-right: none;
   margin-top: 10%;
+}
+
+p.delete-button {
+  color: red;
+  text-decoration: underline;
 }

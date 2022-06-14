@@ -9,6 +9,7 @@ var $titleEdit = document.querySelector('input#title-edit');
 var $notesEdit = document.querySelector('textarea#notes-edit');
 var $editForm = document.querySelector('form.edit-form');
 var $entryDom = document.querySelector('div.entries-container');
+var $entriesList = document.querySelector('div.row-entries-list');
 var $createDom = document.querySelector('div.entry-form');
 var $editDom = document.querySelector('div.edit-form');
 var $createNewEntryButton = document.querySelector('button.entries-new');
@@ -16,6 +17,11 @@ var $seeAllEntriesButton = document.querySelector('button.entries-button');
 var $entryList = document.querySelector('ul.entries-list');
 var $noEntries = document.querySelector('div.no-entries');
 var $allEdits = document.querySelectorAll('i');
+var $deleteButton = document.querySelector('.delete-button');
+var $deletePopup = document.querySelector('.delete-popup-container');
+var $deletePopupShadow = document.querySelector('.popup-shadow');
+var $cancelDeleteButton = document.querySelector('.cancel-delete-button');
+var $confirmDeleteButton = document.querySelector('.confirm-delete-button');
 
 var dataEntryValue = 0;
 var editEntryValue = 0;
@@ -71,6 +77,9 @@ function addEntry(event) {
   }
   $photoURL.setAttribute('src', 'images/placeholder-image-square.jpg');
   $allEdits = document.querySelectorAll('i');
+  for (var y = 0; y < $allEdits.length; y++) {
+    $allEdits[y].addEventListener('click', editCreate);
+  }
 }
 
 $addForm.addEventListener('submit', addEntry);
@@ -155,6 +164,55 @@ function editEntry(event) {
   $allEdits = document.querySelectorAll('i');
   $editButtonNew.addEventListener('click', editCreate);
 }
+
+function deletePopup(event) {
+  $deletePopup.setAttribute('class', 'delete-popup');
+  $deletePopupShadow.setAttribute('class', 'popup-shadow');
+}
+
+$deleteButton.addEventListener('click', deletePopup);
+
+function cancelDeleteEntry(event) {
+  $deletePopup.setAttribute('class', 'delete-popup hidden');
+  $deletePopupShadow.setAttribute('class', 'popup-shadow hidden');
+}
+
+$cancelDeleteButton.addEventListener('click', cancelDeleteEntry);
+
+function deleteEntry(event) {
+  data.entries.splice(dataEntryValue, 1);
+  $deletePopup.setAttribute('class', 'delete-popup hidden');
+  $deletePopupShadow.setAttribute('class', 'popup-shadow hidden');
+  $createDom.setAttribute('class', 'entry-form hidden');
+  $entryDom.setAttribute('class', 'entries-container column-half-entries');
+  $editDom.setAttribute('class', 'edit-form hidden');
+  data.nextEntryId -= 1;
+  for (var x in data.entries) {
+    data.entries[x].entryId = data.entries.length - x;
+  }
+  var $deleteEntry = document.querySelector('li.entry-' + editEntryValue);
+  $deleteEntry.remove();
+  var $allEntries = document.querySelectorAll('li.column-full-entry');
+  for (var y = 0; y < $allEntries.length; y++) {
+    $allEntries[y].setAttribute('class', 'column-full-entry entry-' + ($allEntries.length - y));
+    $allEntries[y].children[0].children[0].setAttribute('class', 'entry-' + ($allEntries.length - y));
+    $allEntries[y].children[1].children[0].setAttribute('class', 'entry-name entry-' + ($allEntries.length - y));
+    $allEntries[y].children[1].children[0].children[0].setAttribute('class', 'fa-solid fa-pen edit-entry-' + ($allEntries.length - y));
+    $allEntries[y].children[1].children[1].setAttribute('class', 'entry-' + ($allEntries.length - y));
+  }
+  if (data.entries.length === 0) {
+    var $noEntriesDiv = document.createElement('div');
+    $noEntriesDiv.setAttribute('class', 'no-entries');
+    var $noEntriesP = document.createElement('p');
+    $noEntriesP.setAttribute('class', 'no-entries');
+    $noEntriesP.textContent = 'No entries have been recorded.';
+    $noEntriesDiv.appendChild($noEntriesP);
+    $entryDom.insertBefore($noEntriesDiv, $entriesList);
+  }
+  $noEntries = $noEntriesDiv;
+}
+
+$confirmDeleteButton.addEventListener('click', deleteEntry);
 
 $editForm.addEventListener('submit', editEntry);
 
