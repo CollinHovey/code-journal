@@ -70,9 +70,20 @@
             <textarea id="notes-edit" name="notes-edit" required></textarea>
           </div>
           <div class="submit-row">
+            <p class="delete-button">Delete Entry</p>
             <button type="submit" class="submit">SAVE</button>
           </div>
         </form>
+      </div>
+      <div class="popup-shadow hidden"></div>
+      <div class="delete-popup-container hidden">
+        <div class="delete-popup">
+          <p class="delete-question">Are you sure you want to delete this entry?</p>
+          <div class="button-holder">
+            <button class="cancel-delete-button">CANCEL</button>
+            <button class="confirm-delete-button">CONFIRM</button>
+          </div>
+        </div>
       </div>
       <div data-view="entries" class="entries-container column-half-entries">
         <div class="row-entries">
